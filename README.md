@@ -9,6 +9,8 @@ By deploying a number of Kerberos Agents in bulk you will benefit from a better 
 - different resolutions: 640x480, 1280x720, etc.
 - and more.
 
+![Create Kerberos Agents](/images/create-agents.gif)
+
 ## How it works
 
 This tool requires a couple of parameters, and will use your Kerberos Factory installation, and its related APIs, to automate the creation of one or more agents. The required options are:
