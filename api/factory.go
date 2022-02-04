@@ -3,6 +3,7 @@ package api
 import (
 	"bytes"
 	"encoding/json"
+	"github.com/kerberos-io/rtsp-benchmark/models"
 	log "github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
@@ -26,10 +27,12 @@ func AuthorizeFactory(api string, username string, password string) ([]byte, err
 	return body, err
 }
 
-func CreateKerberosAgent(api string, token string, name string, rtsp string) ([]byte, error){
+func CreateKerberosAgent(api string, token string, cd models.ContainerDetails) ([]byte, error){
 	postBody, _ := json.Marshal(map[string]string{
-		"name":  name,
-		"rtsp": rtsp,
+		"name":  cd.Name,
+		"rtsp": cd.RTSP,
+		"continuous": cd.Continuous,
+		"region": cd.Region,
 	})
 	responseBody := bytes.NewBuffer(postBody)
 	//Leverage Go's HTTP Post function to make request

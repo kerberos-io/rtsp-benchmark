@@ -25,6 +25,8 @@ func main() {
     action := flag.String("action", "create", "create/delete Kerberos Agents based on the deployment key.")
     deployment := flag.String("deployment", "", "the deployment name to be removed.")
     rtsp := flag.String("rtsp", "", "the RTSP connection that will injected into your Kerberos Agent.")
+    continuous := flag.String("continuous", "", "whether the agent needs to run in a continuous or motion based recording.")
+    region := flag.String("region", "", "if motion based, a region can be setup.")
     flag.Parse()
 
     if *factoryAPI == "" {
@@ -102,7 +104,14 @@ func main() {
         for i := 0; i < *numberOfAgents; i++ {
             bar.Describe("[cyan][3/4][reset] Adding virtual-rtsp Kerberos Agent (" + strconv.Itoa(i) + ")")
             agentName := friendlyName+"-"+strconv.Itoa(i)
-            _, err := api.CreateKerberosAgent(*factoryAPI, authorization.Token, agentName, *rtsp)
+
+            var containerDetails models.ContainerDetails
+            containerDetails.Name = agentName
+            containerDetails.RTSP = *rtsp
+            containerDetails.Continuous = *continuous
+            containerDetails.Region = *region
+
+            _, err := api.CreateKerberosAgent(*factoryAPI, authorization.Token, containerDetails)
             if err == nil {
                 agentsAdded = agentsAdded + 1
                 bar.Add(1)

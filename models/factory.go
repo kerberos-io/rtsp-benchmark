@@ -16,3 +16,14 @@ type Deployment struct {
 	LastUpdated       string       `json:"last_updated" bson:"last_updated"`
 	MemoryLimit       string       `json:"memory_limit" bson:"memory_limit"`
 }
+
+type ContainerDetails struct {
+	Name          string `json:"name" bson:"name"`
+	RTSP          string `json:"rtsp" bson:"rtsp"`
+	ONVIF         string `json:"onvif,omitempty" bson:"onvif"`
+	Continuous    string `json:"continuous" bson:"continuous"`
+	Region        string `json:"region" bson:"region"`
+	ONVIFXAddr    string `json:"onvif_xaddr,omitempty" bson:"onvif_xaddr"`
+	ONVIFUsername string `json:"onvif_username,omitempty" bson:"onvif_username"`
+	ONVIFPassword string `json:"onvif_password,omitempty" bson:"onvif_password"`
+}
