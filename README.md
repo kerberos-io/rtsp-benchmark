@@ -24,6 +24,8 @@ This tool requires a couple of parameters, and will use your Kerberos Factory in
 | `-action`                                     | Create/delete Kerberos Agents based on the deployment key.          | `""`  |
 | `-rtsp`                                       | The RTSP connection that will injected into your Kerberos Agent.    | `""`  |
 | `-deployment`                                 | The deployment name to be removed.                                  | `""`  |
+| `-continuous`                                 | Enabling continuous recording (true), or motion based recording (false).                                  | `""`  |
+| `-region`                                     | If motion recording enabled, we can set a region (x1-y1,x2-y2,..)   | `""`  |
 
 ## How to use
 
