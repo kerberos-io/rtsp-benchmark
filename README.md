@@ -29,7 +29,7 @@ This tool requires a couple of parameters, and will use your Kerberos Factory in
 
 ## How to use
 
-Make sure you have Golang installed on your machine, and that you have access to the Kerberos Factory api. Once you have that dependency ready, you can simply execute the `go run` or `go build` command to execute the benchmark or build the benchmark binary.
+Make sure you have Golang installed on your machine, and that you have access to the Kerberos Factory API. Once you have that dependency ready, you can simply execute the `go run` or `go build` command to execute the benchmark or build the benchmark binary.
 
     go run main.go -factory-api=http://api...
 
