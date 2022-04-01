@@ -15,17 +15,20 @@ By deploying a number of Kerberos Agents in bulk you will benefit from a better 
 
 This tool requires a couple of parameters, and will use your Kerberos Factory installation, and its related APIs, to automate the creation of one or more agents. The required options are:
 
-| Option                                        | Description                                                         | Value |
-| --------------------------------------------- | ------------------------------------------------------------------- | ----- |
-| `-factory-api`                                | The API of Kerberos Factory                                         | `""`  |
-| `-factory-username`                           | The username of Kerberos Factory                                    | `""`  |
-| `-factory-password`                           | The password of Kerberos Factory                                    | `""`  |
-| `-agents`                                     | The number of Kerberos Agents to be deployed                        | `0`  |
-| `-action`                                     | Create/delete Kerberos Agents based on the deployment key.          | `""`  |
-| `-rtsp`                                       | The RTSP connection that will injected into your Kerberos Agent.    | `""`  |
-| `-deployment`                                 | The deployment name to be removed.                                  | `""`  |
-| `-continuous`                                 | Enabling continuous recording (true), or motion based recording (false).                                  | `""`  |
-| `-region`                                     | If motion recording enabled, we can set a region (x1-y1,x2-y2,..)   | `""`  |
+| Option                                        | Description                                                                               | Value |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------| ----- |
+| `-factory-api`                                | The API of Kerberos Factory                                                               | `""`  |
+| `-factory-username`                           | The username of Kerberos Factory                                                          | `""`  |
+| `-factory-password`                           | The password of Kerberos Factory                                                          | `""`  |
+| `-agents`                                     | The number of Kerberos Agents to be deployed                                              | `0`  |
+| `-action`                                     | Create/delete Kerberos Agents based on the deployment key.                                | `""`  |
+| `-rtsp`                                       | The RTSP connection that will injected into your Kerberos Agent.                          | `""`  |
+| `-deployment`                                 | The deployment name to be removed.                                                        | `""`  |
+| `-continuous`                                 | Enabling continuous recording (true), or motion based recording (false).                  | `""`  |
+| `-region`                                     | If motion recording enabled, we can set a region (x1-y1,x2-y2,..)                         | `""`  |
+| `-prerecording`                               | If motion based, pre recording is used to record a number of seconds before the event.    | `5`  |
+| `-postrecording`                              | If motion based, post recording is used to record a number of seconds after the event.    | `10`  |
+| `-maxlengthrecording`                         | The total (max) length/duration of a single recording.                                    | `30`  |
 
 ## How to use
 
